@@ -1,5 +1,13 @@
+import Formulario from "./components/Formulario";
+import Header from "./components/Header";
+
 function App() {
-  return <h1>Olá mundo!</h1>;
+  return (
+    <>
+      <Header />
+      <Formulario />
+    </>
+  );
 }
 
 export default App;
