@@ -1,7 +1,20 @@
 import CaixaDeTexto from "../CaixaDeTexto";
+import ListaDeItens from "../ListaDeItens";
+import "./styles.css";
 
 const Formulario = () => {
-  const listaCargos = ["Backend", "Design", "Frontend"];
+  const listaCargos = [
+    "Backend",
+    "Design",
+    "Frontend",
+    "Datascience",
+    "Ui",
+    "Project Owner",
+    "Gerente",
+    "Estagiaria",
+    "Sofredora",
+  ];
+
   return (
     <>
       <b>Preencha com os dados da mulher referência para cirar um card</b>
@@ -11,7 +24,7 @@ const Formulario = () => {
         label="Imagem"
         placeholder="Digite o endereço da sua imagem..."
       />
-      {/* <ListaDeItens label="Time" opcoes={listaCargos} /> */}
+      <ListaDeItens label="Time" opcoes={listaCargos} />
     </>
   );
 };
