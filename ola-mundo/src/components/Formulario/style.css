@@ -1,0 +1,17 @@
+.formulario { 
+  display: flex;
+  justify-content: center;
+  margin: 20px 60px;
+}
+
+.formulario form {
+  max-width: 80%;
+  background-color: #f2f2f2;
+  border-radius: 20px; /* arredondando as bordas */
+  padding: 36px 64px; /* espaçamento */
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08); /* sombra, sençasão de flutuante */
+}
+
+.formulario form h3{
+  margin-bottom: 40px;
+}
