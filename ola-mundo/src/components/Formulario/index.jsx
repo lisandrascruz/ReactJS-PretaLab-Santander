@@ -16,16 +16,18 @@ const Formulario = () => {
   ];
 
   return (
-    <>
-      <b>Preencha com os dados da mulher referência para cirar um card</b>
-      <CaixaDeTexto label="Nome" placeholder="Digite o seu nome..." />
-      <CaixaDeTexto label="Cargo" placeholder="Digite o seu cargo..." />
-      <CaixaDeTexto
-        label="Imagem"
-        placeholder="Digite o endereço da sua imagem..."
-      />
-      <ListaDeItens label="Time" opcoes={listaCargos} />
-    </>
+    <section className="formulario">
+      <form>
+        <b>Preencha com os dados da mulher referência para cirar um card</b>
+        <CaixaDeTexto label="Nome" placeholder="Digite o seu nome..." />
+        <CaixaDeTexto label="Cargo" placeholder="Digite o seu cargo..." />
+        <CaixaDeTexto
+          label="Imagem"
+          placeholder="Digite o endereço da sua imagem..."
+        />
+        <ListaDeItens label="Time" opcoes={listaCargos} />
+      </form>
+    </section>
   );
 };
 

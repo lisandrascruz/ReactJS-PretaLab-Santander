@@ -2,7 +2,7 @@ import "./styles.css";
 
 const ListaDeItens = ({ label, opcoes }) => {
   return (
-    <div>
+    <div className="lista-de-itens">
       <label>{label}</label>
       <select>
         {opcoes.map((elemento, index) => (
