@@ -11,7 +11,7 @@ const Formulario = () => {
         label="Imagem"
         placeholder="Digite o endereço da sua imagem..."
       />
-      <ListaDeItens label="Time" opcoes={listaCargos} />
+      {/* <ListaDeItens label="Time" opcoes={listaCargos} /> */}
     </>
   );
 };
