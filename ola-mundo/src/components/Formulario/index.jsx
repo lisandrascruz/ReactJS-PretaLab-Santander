@@ -1,31 +1,18 @@
 import CaixaDeTexto from "../CaixaDeTexto";
-import ListaDeItens from "../ListaDeItens";
 import "./styles.css";
 
 const Formulario = () => {
-  const listaCargos = [
-    "Backend",
-    "Design",
-    "Frontend",
-    "Datascience",
-    "Ui",
-    "Project Owner",
-    "Gerente",
-    "Estagiaria",
-    "Sofredora",
-  ];
-
   return (
     <section className="formulario">
       <form>
         <b>Preencha com os dados da mulher referência para cirar um card</b>
         <CaixaDeTexto label="Nome" placeholder="Digite o seu nome..." />
-        <CaixaDeTexto label="Cargo" placeholder="Digite o seu cargo..." />
+        <CaixaDeTexto label="Foto" placeholder="Digite a url da sua foto..." />
         <CaixaDeTexto
-          label="Imagem"
-          placeholder="Digite o endereço da sua imagem..."
+          label="Comida que não gosta"
+          placeholder="Uma comida que não dá!!!"
         />
-        <ListaDeItens label="Time" opcoes={listaCargos} />
+        <CaixaDeTexto label="Experiência massa" placeholder="Conta ai.." />
       </form>
     </section>
   );
