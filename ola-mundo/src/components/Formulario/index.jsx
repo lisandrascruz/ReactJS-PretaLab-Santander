@@ -1,3 +1,4 @@
+import Botao from "../Botao";
 import CaixaDeTexto from "../CaixaDeTexto";
 import "./styles.css";
 
@@ -13,6 +14,7 @@ const Formulario = () => {
           placeholder="Uma comida que não dá!!!"
         />
         <CaixaDeTexto label="Experiência massa" placeholder="Conta ai.." />
+        <Botao texto="Criar card" />
       </form>
     </section>
   );
