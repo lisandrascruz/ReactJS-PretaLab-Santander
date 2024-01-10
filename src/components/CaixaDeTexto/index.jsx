@@ -1,5 +1,5 @@
 import "./styles.css";
-//PROPS
+
 const CaixaDeTexto = ({ value, label, placeholder, handleChange }) => {
   return (
     <div className="campo-texto">
