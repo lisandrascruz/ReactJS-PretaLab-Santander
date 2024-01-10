@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Botao from "../Botao";
 import CaixaDeTexto from "../CaixaDeTexto";
 import "./styles.css";
@@ -15,6 +15,8 @@ const Formulario = ({ lista, setLista }) => {
     setComidaNaoGosta("");
     setExperienciaMassa("");
   };
+
+  const quantidadeEstudantes = useMemo(() => lista.length, [lista]);
 
   const criarCartao = (event) => {
     event.preventDefault();
@@ -36,7 +38,11 @@ const Formulario = ({ lista, setLista }) => {
     <section className="formulario">
       <form>
         <b>Preencha com os dados da mulher referência para cirar um card</b>
-
+        <br />
+        <small>
+          {/* <i>Atualmente há {lista.length} estudantes cadastradas</i> */}
+          <i>Atualmente há {quantidadeEstudantes} estudantes cadastradas</i>
+        </small>
         <CaixaDeTexto
           value={nome}
           label="Nome"
