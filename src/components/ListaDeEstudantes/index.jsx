@@ -1,11 +1,10 @@
-import { estudantes } from "../../data/estudantes";
 import CardEstudante from "../CardEstudante";
 import "./styles.css";
 
-const ListaDeEstudantes = () => {
+const ListaDeEstudantes = ({ lista }) => {
   return (
     <div className="wrapper">
-      {estudantes.map((estudante, index) => (
+      {lista.map((estudante, index) => (
         <CardEstudante
           key={index}
           nome={estudante.nome}
