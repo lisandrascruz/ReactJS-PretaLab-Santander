@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Formulario from "./components/Formulario";
 import Header from "./components/Header";
 import ListaDeEstudantes from "./components/ListaDeEstudantes";
@@ -6,10 +6,23 @@ import Rodape from "./components/Rodape";
 import { estudantes } from "./data/estudantes";
 
 function App() {
-  // hooks: gancho, anzol
-  // useState()
-  // const lista = estudantes;
   const [lista, setLista] = useState(estudantes);
+
+  //useEffect executado assim que entra no componente (componentDidMount)
+  useEffect(() => {
+    const listaStorage = localStorage.getItem("estudantes");
+
+    if (listaStorage) {
+      setLista(JSON.parse(listaStorage));
+    }
+  }, []);
+
+  // useEffect executado ao haver uma mudança (componentDidUpdate)
+  useEffect(() => {
+    if (lista.length > 14) alert("Estudante adicionada com sucesso!");
+
+    localStorage.setItem("estudantes", JSON.stringify(lista));
+  }, [lista]);
 
   return (
     <>
