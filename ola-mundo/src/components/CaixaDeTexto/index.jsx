@@ -1,10 +1,10 @@
 import "./styles.css";
 //PROPS
-const CaixaDeTexto = ({ label, placeholder }) => {
+const CaixaDeTexto = ({ id, label, placeholder }) => {
   return (
     <div className="campo-texto">
       <label>{label}</label>
-      <input placeholder={placeholder}></input>
+      <input id={id} placeholder={placeholder}></input>
     </div>
   );
 };
