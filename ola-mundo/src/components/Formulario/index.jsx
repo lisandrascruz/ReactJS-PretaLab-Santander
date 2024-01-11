@@ -1,15 +1,23 @@
+import { useMemo, useState } from "react";
 import Botao from "../Botao";
 import CaixaDeTexto from "../CaixaDeTexto";
 import "./styles.css";
 
 const Formulario = ({ lista, setLista }) => {
+  const [nome, setNome] = useState("");
+  const [foto, setFoto] = useState("");
+  const [comidaNaoGosta, setComidaNaoGosta] = useState("");
+  const [experienciaMassa, setExperienciaMassa] = useState("");
+
+  const limparCampos = () => {
+    setNome("");
+    setFoto("");
+    setExperienciaMassa("");
+    setComidaNaoGosta("");
+  };
+
   const criarCartao = (event) => {
     event.preventDefault();
-
-    const nome = document.getElementById("nome").value;
-    const foto = document.getElementById("foto").value;
-    const comidaNaoGosta = document.getElementById("comidaNaoGosta").value;
-    const experienciaMassa = document.getElementById("experienciaMassa").value;
 
     const estudante = {
       nome: nome,
@@ -18,33 +26,45 @@ const Formulario = ({ lista, setLista }) => {
       experienciaPositiva: experienciaMassa,
     };
 
-    const novaLista = [...lista, estudante];
+    const novaLista = [estudante, ...lista];
     setLista(novaLista);
+
+    limparCampos();
   };
+
+  const quantidadeEstudantes = useMemo(() => lista.length, [lista]);
 
   return (
     <section className="formulario">
       <form onSubmit={criarCartao}>
         <b>Preencha com os dados da mulher referência para cirar um card</b>
+        <br />
+        <small>
+          <i>Atualmente há {quantidadeEstudantes} estudantes cadastradas</i>
+        </small>
         <CaixaDeTexto
-          id="nome"
+          value={nome}
           label="Nome"
           placeholder="Digite o seu nome..."
+          handleChange={(e) => setNome(e.target.value)}
         />
         <CaixaDeTexto
-          id="foto"
+          value={foto}
           label="Foto"
           placeholder="Digite a url da sua foto..."
+          handleChange={(e) => setFoto(e.target.value)}
         />
         <CaixaDeTexto
-          id="comidaNaoGosta"
+          value={comidaNaoGosta}
           label="Comida que não gosta"
           placeholder="Uma comida que não dá!!!"
+          handleChange={(e) => setComidaNaoGosta(e.target.value)}
         />
         <CaixaDeTexto
-          id="experienciaMassa"
+          value={experienciaMassa}
           label="Experiência massa"
           placeholder="Conta ai.."
+          handleChange={(e) => setExperienciaMassa(e.target.value)}
         />
         <Botao texto="Criar card" acao={criarCartao} />
       </form>

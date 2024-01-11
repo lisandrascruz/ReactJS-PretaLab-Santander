@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Formulario from "./components/Formulario";
 import Header from "./components/Header";
 import ListaDeEstudantes from "./components/ListaDeEstudantes";
@@ -10,6 +10,24 @@ function App() {
   // useState()
   // const lista = estudantes;
   const [lista, setLista] = useState(estudantes);
+
+  // onCreate
+  useEffect(() => {
+    const listaStorage = localStorage.getItem("estudantes");
+
+    if (listaStorage) {
+      setLista(JSON.parse(listaStorage));
+    }
+  }, []);
+
+  // onUpdate
+  useEffect(() => {
+    if (lista.length > 14) {
+      alert("Mais uma estudante adicionada com sucesso!");
+    }
+
+    localStorage.setItem("estudantes", JSON.stringify(lista));
+  }, [lista]);
 
   return (
     <>
