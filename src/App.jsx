@@ -1,36 +1,26 @@
 import { useEffect, useState } from "react";
 import Formulario from "./components/Formulario";
 import Header from "./components/Header";
-import ListaDeEstudantes from "./components/ListaDeEstudantes";
 import Rodape from "./components/Rodape";
-import { estudantes } from "./data/estudantes";
+import InicioPage from "./pages/InicioPage";
+import SobrePage from "./pages/SobrePage";
+import ErrorPage from "./pages/ErrorPage";
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
-  const [lista, setLista] = useState(estudantes);
-
-  //useEffect executado assim que entra no componente (componentDidMount)
-  useEffect(() => {
-    const listaStorage = localStorage.getItem("estudantes");
-
-    if (listaStorage) {
-      setLista(JSON.parse(listaStorage));
-    }
-  }, []);
-
-  // useEffect executado ao haver uma mudança (componentDidUpdate)
-  useEffect(() => {
-    if (lista.length > 14) alert("Estudante adicionada com sucesso!");
-
-    localStorage.setItem("estudantes", JSON.stringify(lista));
-  }, [lista]);
-
   return (
     <>
+      <Header />
+
       <div style={{ marginBottom: "130px" }}>
-        <Header />
-        <Formulario setLista={setLista} lista={lista} />
-        <ListaDeEstudantes lista={lista} />
+        <Routes>
+          {/* aqui serão definidas as rotas */}
+          <Route path="/" element={<InicioPage />} />
+          <Route path="/sobre" element={<SobrePage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
       </div>
+
       <Rodape mensagem="Feito por amor por Lis <3" />
     </>
   );
