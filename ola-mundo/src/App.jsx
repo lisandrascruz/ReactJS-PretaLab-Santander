@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import ListaDeEstudantes from "./components/ListaDeEstudantes";
 import Rodape from "./components/Rodape";
 import { estudantes } from "./data/estudantes";
+import Contador from "./components/Contador";
 
 function App() {
   const listaStorage = localStorage.getItem("estudantes");
@@ -25,6 +26,7 @@ function App() {
     <>
       <div style={{ marginBottom: "130px" }}>
         <Header />
+        <Contador />
         <Formulario setLista={setLista} lista={lista} />
         <ListaDeEstudantes lista={lista} />
       </div>
