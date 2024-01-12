@@ -6,15 +6,11 @@ import Rodape from "./components/Rodape";
 import { estudantes } from "./data/estudantes";
 
 function App() {
-  // hooks: gancho, anzol
-  // useState()
-  // const lista = estudantes;
-  const [lista, setLista] = useState(estudantes);
+  const listaStorage = localStorage.getItem("estudantes");
+  const [lista, setLista] = useState(JSON.parse(listaStorage) || estudantes);
 
   // onCreate
   useEffect(() => {
-    const listaStorage = localStorage.getItem("estudantes");
-
     if (listaStorage) {
       setLista(JSON.parse(listaStorage));
     }
@@ -22,10 +18,6 @@ function App() {
 
   // onUpdate
   useEffect(() => {
-    if (lista.length > 14) {
-      alert("Mais uma estudante adicionada com sucesso!");
-    }
-
     localStorage.setItem("estudantes", JSON.stringify(lista));
   }, [lista]);
 
