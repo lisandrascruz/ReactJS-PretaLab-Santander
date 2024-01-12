@@ -3,6 +3,7 @@ import Formulario from "./components/Formulario";
 import Header from "./components/Header";
 import ListaDeEstudantes from "./components/ListaDeEstudantes";
 import Rodape from "./components/Rodape";
+import Contador from "./components/Contador";
 import { estudantes } from "./data/estudantes";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <>
       <div style={{ marginBottom: "130px" }}>
         <Header />
+        <Contador />
         <Formulario setLista={setLista} lista={lista} />
         <ListaDeEstudantes lista={lista} />
       </div>
