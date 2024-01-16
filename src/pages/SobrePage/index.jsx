@@ -1,4 +1,12 @@
+import { Link } from "react-router-dom";
+
 const SobrePage = () => {
-  return <h1>sobre </h1>;
+  return (
+    <main>
+      <Link to="/sobre/mim">Sobre mim</Link>
+      <br />
+      <Link to="/sobre/pretalab">Sobre o PretaLab</Link>
+    </main>
+  );
 };
 export default SobrePage;
