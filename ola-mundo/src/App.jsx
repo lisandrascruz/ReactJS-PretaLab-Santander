@@ -1,35 +1,23 @@
-import { useState, useEffect } from "react";
-import Formulario from "./components/Formulario";
 import Header from "./components/Header";
-import ListaDeEstudantes from "./components/ListaDeEstudantes";
 import Rodape from "./components/Rodape";
-import { estudantes } from "./data/estudantes";
-import Contador from "./components/Contador";
+import ContadorPage from "./pages/ContadorPage";
+import { Route, Routes } from "react-router-dom";
+import InicioPage from "./pages/InicioPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
-  const listaStorage = localStorage.getItem("estudantes");
-  const [lista, setLista] = useState(JSON.parse(listaStorage) || estudantes);
-
-  // onCreate
-  useEffect(() => {
-    if (listaStorage) {
-      setLista(JSON.parse(listaStorage));
-    }
-  }, []);
-
-  // onUpdate
-  useEffect(() => {
-    localStorage.setItem("estudantes", JSON.stringify(lista));
-  }, [lista]);
-
   return (
     <>
+      <Header />
+
       <div style={{ marginBottom: "130px" }}>
-        <Header />
-        <Contador />
-        <Formulario setLista={setLista} lista={lista} />
-        <ListaDeEstudantes lista={lista} />
+        <Routes>
+          <Route path="/" element={<InicioPage />} />
+          <Route path="/contador" element={<ContadorPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
       </div>
+
       <Rodape mensagem="Feito por amor por Lis <3" />
     </>
   );

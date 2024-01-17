@@ -1,6 +1,7 @@
 .banner {
   display: flex;
   height: 300px;
+  margin-top: 48.4px;
 }
 
 .banner img {
