@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
+import "./styles.css";
 
 const SobrePage = () => {
   return (
-    <main>
-      <Link to="/sobre/mim">Sobre mim</Link>
+    <main className="center">
+      <Link className="link" to="/sobre/mim">
+        <p>Sobre mim</p>
+      </Link>
       <br />
-      <Link to="/sobre/pretalab">Sobre o PretaLab</Link>
+      <Link className="link" to="/sobre/pretalab">
+        <p>Sobre o PretaLab</p>
+      </Link>
     </main>
   );
 };
