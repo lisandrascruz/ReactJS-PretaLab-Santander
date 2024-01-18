@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Formulario from "../../components/Formulario";
 import ListaDeEstudantes from "../../components/ListaDeEstudantes";
+import { estudantes } from "../../data/estudantes";
 
 const InicioPage = () => {
   const listaStorage = localStorage.getItem("estudantes");

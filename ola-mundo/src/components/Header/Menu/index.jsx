@@ -15,6 +15,11 @@ const Menu = () => {
             Contador
           </Link>
         </li>
+        <li>
+          <Link className="menu-item" to="/sobre">
+            Sobre
+          </Link>
+        </li>
       </ul>
     </nav>
   );

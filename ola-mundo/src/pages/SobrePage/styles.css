@@ -1,0 +1,35 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: calc(100vh - 426px)
+}
+
+.link {
+  display: flex;
+  width: 50vw;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+  height: calc(100vh - 500px);
+  margin: 50px;
+}
+
+.link:first-child {
+  background-color: #ebccf4
+}
+
+.link:last-child {
+  background-color: #ececff
+}
+
+.link p {
+  color: #000;
+  font-size: 20px;
+}
+
+.link:hover {
+  transform: scale(1.1); 
+  transition: transform 0.3s ease; 
+}
