@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 import "./styles.css";
 
 const PokemonPage = () => {
@@ -8,7 +8,7 @@ const PokemonPage = () => {
 
   const fetchAllPokemons = async () => {
     try {
-      const response = await Axios.get(
+      const response = await axios.get(
         "https://pokeapi.co/api/v2/pokemon?limit=100"
       );
       setPokemonsReferences(response.data.results);
@@ -22,7 +22,7 @@ const PokemonPage = () => {
 
     for (const pokemon of pokemonsReferences) {
       try {
-        const response = await Axios.get(pokemon.url);
+        const response = await axios.get(pokemon.url);
         tempList.push(response.data);
       } catch (error) {
         console.error("Erro ao buscar o Pokemon:", error);
