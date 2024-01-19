@@ -7,6 +7,7 @@ import ErrorPage from "./pages/ErrorPage";
 import SobrePage from "./pages/SobrePage";
 import SobreMimPage from "./pages/SobrePage/SobreMimPage";
 import SobrePretaLabPage from "./pages/SobrePage/SobrePretaLabPage";
+import PokemonPage from "./pages/PokemonPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<InicioPage />} />
           <Route path="/contador" element={<ContadorPage />} />
+          <Route path="/pokemons" element={<PokemonPage />} />
           <Route path="/sobre">
             <Route index element={<SobrePage />} />
             <Route path="mim" element={<SobreMimPage />} />
