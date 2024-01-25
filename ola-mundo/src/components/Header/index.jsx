@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <Menu />
       <div className="banner">
-        <img src="../../../public/banner.png" />
+        <img src="../../assets/banner.svg" />
       </div>
     </>
   );
