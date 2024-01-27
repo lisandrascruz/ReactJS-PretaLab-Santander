@@ -3,7 +3,7 @@ import Formulario from "../../components/Formulario";
 import ListaDeEstudantes from "../../components/ListaDeEstudantes";
 import { estudantes } from "../../data/estudantes";
 
-const InicioPage = () => {
+const EstudantesPage = () => {
   const listaStorage = localStorage.getItem("estudantes");
   const [lista, setLista] = useState(JSON.parse(listaStorage) || estudantes);
 
@@ -27,4 +27,4 @@ const InicioPage = () => {
   );
 };
 
-export default InicioPage;
+export default EstudantesPage;
