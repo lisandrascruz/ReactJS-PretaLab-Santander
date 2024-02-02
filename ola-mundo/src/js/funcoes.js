@@ -8,7 +8,7 @@ export const concederAumento = (cargo, salario) => {
 
   if (cargo === "dev junior") {
     percentualAumento = 0.2;
-  } else if (cargo === "dev pleno") {
+  } else if (cargo === "dev pleno" || cargo === "designer") {
     percentualAumento = 0.12;
   } else if (cargo === "dev senior") {
     percentualAumento = 0.05;

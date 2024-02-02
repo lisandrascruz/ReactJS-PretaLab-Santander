@@ -25,4 +25,9 @@ describe("concederAumento", () => {
     const salario = concederAumento("analista de banco de dados", 1000);
     expect(salario).toBe(1000);
   });
+
+  it("deve calcular o aumento de 12% para todas as pessoas designers", () => {
+    const salario = concederAumento("designer", 1000);
+    expect(salario).toBe(1120);
+  });
 });
